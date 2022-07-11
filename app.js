@@ -3,6 +3,7 @@ let capital
 let porcentaje
 let apalancamiento
 
+
 do {
     capital = parseInt(prompt("Ingrese su capital a invertir"))
     porcentaje = parseInt(prompt("Ingrese su porcentaje de ganancia"))
@@ -19,12 +20,9 @@ if( apalancamiento > 20){
 } while (isNaN(capital) || isNaN(porcentaje) || isNaN(apalancamiento));
 
 
-
-
 function operacion(){
-operacion =  ((porcentaje*apalancamiento)*capital)/100
+const operacion =  ((porcentaje*apalancamiento)*capital)/100
+console.log("su ganancia de inversion fue de " +operacion +" Usd con un apalancamiento de "+apalancamiento +"x" )
 }
 
-
 operacion();
-console.log("su ganancia de inversion fue de " +operacion +" Usd con un apalancamiento de "+apalancamiento +"x" )
