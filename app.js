@@ -1,7 +1,5 @@
 
-let capital
-let porcentaje
-let apalancamiento
+let capital, porcentaje, apalancamiento
 
 
 do {
@@ -22,7 +20,7 @@ if( apalancamiento > 20){
 
 function operacion(){
 const operacion =  ((porcentaje*apalancamiento)*capital)/100
-console.log("su ganancia de inversion fue de " +operacion +" Usd con un apalancamiento de "+apalancamiento +"x" )
+alert("su ganancia de inversion fue de " +operacion +" Usd con un apalancamiento de "+apalancamiento +"x" )
 }
 
 operacion();
