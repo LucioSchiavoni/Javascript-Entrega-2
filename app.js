@@ -10,7 +10,7 @@ class Orden{
 }
 
 let nombre, monto, porcentaje, apalancamiento, respuesta
-do{
+
 do {
     nombre = prompt("Ingrese el nombre donde va a invertir").toLowerCase()
     monto = parseInt(prompt("Ingrese su monto a invertir"))
@@ -23,6 +23,21 @@ if( apalancamiento > 20){
     operacion();
 }
 
+do{
+    respuesta = parseInt(prompt("Ingrese 1 para buscar una orden, 2 para ordenar de mayor a menor gananica"))
+
+if(respuesta == 1){
+buscarOrdenes();
+}else{
+(OrdenarOrdenes);
+}
+
+
+}while(respuesta < 1 || respuesta > 2)
+
+
+
+
 } while ((isNaN(capital) || isNaN(porcentaje)  || isNaN(apalancamiento)))
 
 
@@ -31,10 +46,6 @@ function operacion(){
     alert("su ganancia de inversion fue de " +operacion +" Usd con un apalancamiento de "+apalancamiento +"x" )
 }
 ///continuar 
-do{
-    respuesta = parseInt(prompt("Ingrese 1 para buscar una orden, 2 para ordenar de mayor a menor gananica"))
-}while(respuesta < 1 || respuesta > 2)
-}while(isNaN(respuesta))
 
 switch(respuesta){
     case 1:
@@ -58,17 +69,17 @@ function buscarOrdenes(ordenes){
     if( nombreBuscado == undefined){
         alert("No se encuentra")
     } else 
-        alert(nombreBuscado)
+        console.log(nombreBuscado)
     }
 
 buscarOrdenes();
 
 
 function OrdenarOrdenes(ordenes){
-    alert(ordenes.sort((a,b) => b.operacion-a.operacion))
+    console.log(ordenes.sort((a,b) => b.operacion-a.operacion))
 }
-(OrdenarOrdenes);
 
+(OrdenarOrdenes);
 
 
 
