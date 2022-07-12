@@ -9,12 +9,8 @@ class Orden{
     }
 }
 
-const ordenes = []
-mts = 1000
-
-let nombre, monto, porcentaje, apalancamiento
-do {    
-
+let nombre, monto, porcentaje, apalancamiento, respuesta
+do{
 do {
     nombre = prompt("Ingrese el nombre donde va a invertir").toLowerCase()
     monto = parseInt(prompt("Ingrese su monto a invertir"))
@@ -23,27 +19,22 @@ do {
 
 if( apalancamiento > 20){
     alert("Su apalancamiento es demasiado riesgoso, use un apalancamiento menor a 20")
-    
-} else
+}else {
+    operacion();
+}
+
+} while ((isNaN(capital) || isNaN(porcentaje)  || isNaN(apalancamiento)))
+
+
 function operacion(){
     const operacion =  ((porcentaje*apalancamiento)*monto)/100
     alert("su ganancia de inversion fue de " +operacion +" Usd con un apalancamiento de "+apalancamiento +"x" )
-    }
-
-} while ((isNaN(capital) || isNaN(porcentaje) ) || (isNaN(apalancamiento) || (nombre.length == 0)))
-
-const ordenes = new Orden(nombre, monto, porcentaje, apalancamiento)
-ordenes.push(ordenes)
-continua = prompt("Desea ingresar mas ordenes?").toLowerCase()
-
-} while ( continua != "no")
-
-
+}
 ///continuar 
 do{
     respuesta = parseInt(prompt("Ingrese 1 para buscar una orden, 2 para ordenar de mayor a menor gananica"))
 }while(respuesta < 1 || respuesta > 2)
-
+}while(isNaN(respuesta))
 
 switch(respuesta){
     case 1:
@@ -56,7 +47,8 @@ switch(respuesta){
         alert("Opcion no valida")
         break
 }
-
+ 
+const ordenes = []
 
 ///////////Array //////////
 function buscarOrdenes(ordenes){
@@ -75,9 +67,10 @@ buscarOrdenes();
 function OrdenarOrdenes(ordenes){
     alert(ordenes.sort((a,b) => b.operacion-a.operacion))
 }
+(OrdenarOrdenes);
 
 
-OrdenarOrdenes();
+
 
 
     
