@@ -49,7 +49,7 @@ switch(respuesta){
 }
  
 const ordenes = []
-
+mts = 1000
 ///////////Array //////////
 function buscarOrdenes(ordenes){
     let nombreOrdenes = prompt("Ingrese nombre de inversion")
